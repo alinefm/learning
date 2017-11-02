@@ -1,0 +1,10 @@
+# Set the base image
+FROM python:3
+# Dockerfile author / maintainer 
+MAINTAINER Aline Manera <alinefm@linux.vnet.ibm.com> 
+
+# Update application repository list and install the minicrawler app
+COPY . /
+RUN pip install bson pymongo cherrypy 
+
+CMD [ "python", "./server.py" ]
